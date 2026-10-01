@@ -1,0 +1,16 @@
+users:
+  manish@nyas.io:
+    documents:
+      - sharepoint-q1-plan
+      - sharepoint-privacy-review
+    categories:
+      - category-account
+  bob@company.com:
+    documents:
+      - sharepoint-leave-policy
+    categories:
+      - category-hr
+
+default:
+  documents: []
+  categories: []

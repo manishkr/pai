@@ -1,0 +1,8 @@
+# nyas-aero: {"metadata_version":1,"manifest_version":3,"template_version":1,"profile":"rust","package_manager":null,"next_output":null,"config_fingerprint":"18be153a729e034659a5e26d2545bbf05803f26e569eb9a1077a9b702a0e0ee8","incomplete":false}
+FROM public.ecr.aws/docker/library/rust:1-slim@sha256:082a5849a6870672b5f7a5bf4eddc71723fce38756fd834a0d734a5306a310ab
+WORKDIR /app
+COPY . .
+RUN if [ -f Cargo.lock ]; then cargo build --release --locked; else cargo build --release; fi
+ENV PORT=8080 HOST=0.0.0.0 HOSTNAME=0.0.0.0
+EXPOSE 8080
+CMD ["sh", "-c", "exec cargo run --release"]

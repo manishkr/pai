@@ -1,0 +1,7 @@
+/target
+/dist
+/tmp
+/.leptos
+/.sqlx
+.env
+.DS_Store
